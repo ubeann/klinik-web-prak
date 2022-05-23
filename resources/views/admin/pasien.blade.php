@@ -157,7 +157,7 @@
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id Pasien</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Pasien</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Pasien </th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tgl Lahir</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Alamat</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No telp</th>
@@ -166,179 +166,51 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @php $i=1; @endphp
+                    @forelse ($pasien as $key => $item)
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
-                            <p class="text-xs text-secondary mb-0">1</p>
+                            <p class="text-xs text-secondary mb-0">{{ $i++ }}</p>
                           </div>
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Orion Genio</p>
+                        <p class="text-xs text-secondary mb-0">{{ $item['name'] }}</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">26/10/1995</p>
+                        <p class="text-xs text-secondary mb-0">{{ $item['birth'] }}</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Menteng, Jakarta</p>
+                        <p class="text-xs text-secondary mb-0">{{ $item['alamat'] }}</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">082133445566</p>
+                        <p class="text-xs text-secondary mb-0">{{ $item['phone'] }}</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <a href="/admin/pasien/edit" class="badge bg-warning md-18">
+                        <a href="{{ url('/admin/dokter/edit-'.$key) }}" class="badge bg-warning md-18">
                           <div class="text-white text-center d-flex align-items-center justify-content-center">
                             <span class="material-icons md-18">edit</span>
                           </div>
                         </a>
-                        <a href="" class="badge bg-danger">
+                        <a href="{{ url('/admin/dokter/delete-'.$key) }}" class="badge bg-danger">
                           <div class="text-white text-center d-flex align-items-center justify-content-center">
                             <span class="material-icons md-18">delete</span>
                           </div>
                         </a>
                     </td>
                     </tr>
+                    @empty 
                     <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <p class="text-xs text-secondary mb-0">2</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Joel Xander</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">09/02/1995</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Bogor</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">082133445566</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <a href="/admin/pasien/edit" class="badge bg-warning md-18">
-                          <div class="text-white text-center d-flex align-items-center justify-content-center">
-                            <span class="material-icons md-18">edit</span>
-                          </div>
-                        </a>
-                        <a href="" class="badge bg-danger">
-                          <div class="text-white text-center d-flex align-items-center justify-content-center">
-                            <span class="material-icons md-18">delete</span>
-                          </div>
-                        </a>
-                    </td>
+                      <td colspan="5">No Record Found</td>
                     </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <p class="text-xs text-secondary mb-0">3</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Henry Cavill</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">05/05/1983</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Jersey</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">082133445566</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <a href="/admin/pasien/edit" class="badge bg-warning md-18">
-                          <div class="text-white text-center d-flex align-items-center justify-content-center">
-                            <span class="material-icons md-18">edit</span>
-                          </div>
-                        </a>
-                        <a href="" class="badge bg-danger">
-                          <div class="text-white text-center d-flex align-items-center justify-content-center">
-                            <span class="material-icons md-18">delete</span>
-                          </div>
-                        </a>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <p class="text-xs text-secondary mb-0">4</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Kim Taehyung</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">30/12/1995</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">South Korea</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">082133445566</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <a href="/admin/pasien/edit" class="badge bg-warning md-18">
-                          <div class="text-white text-center d-flex align-items-center justify-content-center">
-                            <span class="material-icons md-18">edit</span>
-                          </div>
-                        </a>
-                        <a href="" class="badge bg-danger">
-                          <div class="text-white text-center d-flex align-items-center justify-content-center">
-                            <span class="material-icons md-18">delete</span>
-                          </div>
-                        </a>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <p class="text-xs text-secondary mb-0">5</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Minu Yoon</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">25/05/2001</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Korea</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">082133445566</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <a href="/admin/pasien/edit" class="badge bg-warning md-18">
-                          <div class="text-white text-center d-flex align-items-center justify-content-center">
-                            <span class="material-icons md-18">edit</span>
-                          </div>
-                        </a>
-                        <a href="" class="badge bg-danger">
-                          <div class="text-white text-center d-flex align-items-center justify-content-center">
-                            <span class="material-icons md-18">delete</span>
-                          </div>
-                        </a>
-                    </td>
-                    </tr>
+                    @endforelse
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      
         </div>
       </div>
     </div>
