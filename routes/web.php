@@ -5,6 +5,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Models\About;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PasienController;
 use App\Models\Category;
 
 /*
@@ -40,18 +41,6 @@ Route::get('/admin', function () {
     ]);
 });
 
-Route::get('/admin/pasien', function () {
-    return view('admin.pasien',[
-        "title" => "Pasien"
-    ]);
-});
-
-Route::get('/admin/pasien/add', function () {
-    return view('admin.addPasien',[
-        "title" => "Pasien"
-    ]);
-});
-
 Route::get('/admin/pasien/edit', function () {
     return view('admin.editPasien',[
         "title" => "Pasien"
@@ -63,6 +52,10 @@ Route::get('/admin/pendaftaran', function () {
         "title" => "Pendaftaran"
     ]);
 });
+
+Route::get('/admin/pasien', [PasienController::class, 'index']);
+Route::get('/admin/pasien/add', [PasienController::class, 'create']);
+Route::post('/admin/pasien/add', [PasienController::class, 'store']);
 
 Route::get('/admin/dokter', [AdminController::class, 'index']);
 Route::get('/admin/dokter/add', [AdminController::class, 'create']);
