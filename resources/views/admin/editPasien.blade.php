@@ -154,45 +154,47 @@
             <div class="card-body px-0 pb-2">
               <div class="table-responsive p-0">
                 <div class="col-lg-8 table align-items-center mb-0">
-                  <form method="post" action="/admin/pasien">
-                      @csrf
-                      <div class="mb-3">
-                      <label for="name">Nama Lengkap</label>
-                      <div class="ms-md-auto">
-                        <div class="input-group input-group-outline">
-                          <label class="form-label">name</label>
-                          <input type="text" class="form-control">
-                        </div>
+                  <form method="POST" action="{{ url('/admin/pasien/update-pasien-'.$key) }}" class="mb-5" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    <div class="mb-3">
+                    <label for="name">Nama Lengkap</label>
+                    <div class="ms-md-auto">
+                      <div class="input-group input-group-outline">
+                        <input type="text" name="name" value="{{ $editPasien['name'] }}" class="form-control">
                       </div>
                     </div>
-                      <div class="mb-3">
-                          <label for="birth">Tanggal Lahir</label>
-                          <div class="ms-md-auto">
-                            <div class="input-group input-group-outline">
-                              <label class="form-label">birth</label>
-                              <input type="text" class="form-control">
-                            </div>
+                  </div>
+                    <div class="mb-3">
+                        <label for="birth">Tanggal Lahir</label>
+                        <div class="ms-md-auto">
+                          <div class="input-group input-group-outline">
+                            <input type="text" name="birth" value="{{ $editPasien['birth'] }}" class="form-control">
                           </div>
+                        </div>
+                        </div>
+                        <div class="mb-3">
+                        <label for="address">Alamat</label>
+                        <div class="ms-md-auto">
+                          <div class="input-group input-group-outline">
+                            <input type="text" name="alamat" value="{{ $editPasien['alamat'] }}" class="form-control">
                           </div>
-                          <div class="mb-3">
-                          <label for="address">Alamat</label>
-                          <div class="ms-md-auto">
-                            <div class="input-group input-group-outline">
-                              <label class="form-label">alamat</label>
-                              <input type="text" class="form-control">
-                            </div>
+                        </div>
+                        </div>
+                    <div class="mb-3">
+                        <label for="phone">Nomor Telepon</label>
+                        <div class="ms-md-auto">
+                          <div class="input-group input-group-outline">
+                            <input type="text" name="phone" value="{{ $editPasien['phone'] }}" class="form-control">
                           </div>
-                          </div>
-                      <div class="mb-3">
-                          <label for="phone">Nomor Telepon</label>
-                          <div class="ms-md-auto">
-                            <div class="input-group input-group-outline">
-                              <label class="form-label">No Telepon</label>
-                              <input type="text" class="form-control">
-                            </div>
-                          </div>
-                      </div>
-                  </form>
+                        </div>
+                    </div>
+                    <div class="mb-3 px-3">
+                      <a href="/admin/pasien">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                      </a>
+                    </div>
+                </form>
                   </div>
               
                   <div class="mb-3 px-3">
