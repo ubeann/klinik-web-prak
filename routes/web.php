@@ -56,6 +56,11 @@ Route::get('/admin/pendaftaran', function () {
 Route::get('/admin/pasien', [PasienController::class, 'index']);
 Route::get('/admin/pasien/add', [PasienController::class, 'create']);
 Route::post('/admin/pasien/add', [PasienController::class, 'store']);
+Route::get('/admin/pasien/edit-{id}', [PasienController::class, 'edit']);
+Route::put('/admin/pasien/update-pasien-{id}', [PasienController::class, 'update']);
+Route::post('/admin/pasien/add', [PasienController::class, 'store']);
+Route::get('/admin/pasien/delete-{id}', [PasienController::class, 'destroy']);
+
 
 Route::get('/admin/dokter', [AdminController::class, 'index']);
 Route::get('/admin/dokter/add', [AdminController::class, 'create']);
