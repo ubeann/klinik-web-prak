@@ -189,12 +189,12 @@
                         <p class="text-xs text-secondary mb-0">{{ $item['phone'] }}</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <a href="{{ url('/admin/dokter/edit-'.$key) }}" class="badge bg-warning md-18">
+                        <a href="{{ url('/admin/pasien/edit-'.$key) }}" class="badge bg-warning md-18">
                           <div class="text-white text-center d-flex align-items-center justify-content-center">
                             <span class="material-icons md-18">edit</span>
                           </div>
                         </a>
-                        <a href="{{ url('/admin/dokter/delete-'.$key) }}" class="badge bg-danger">
+                        <a href="{{ url('/admin/pasien/delete-'.$key) }}" class="badge bg-danger">
                           <div class="text-white text-center d-flex align-items-center justify-content-center">
                             <span class="material-icons md-18">delete</span>
                           </div>
