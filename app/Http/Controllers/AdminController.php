@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Kreait\Firebase\Contract\Database;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -37,6 +38,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
+
         $postData = [
             'name' => $request->name,
             'birth' => $request->birth,
@@ -44,7 +46,17 @@ class AdminController extends Controller
             'sps' => $request->spesialisasi,
             'alamat' => $request->alamat,
             'phone' => $request->phone,
+            'image' => $request->image
         ];
+
+        if($request->file('image')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $postData['image'] = $request->file('image')->store('post-image');
+        }
+
+
         $postRef = $this->database->getReference($this->tablename)->push($postData);
 
         if($postRef){
@@ -101,7 +113,15 @@ class AdminController extends Controller
             'sps' => $request->spesialisasi,
             'alamat' => $request->alamat,
             'phone' => $request->phone,
+            'image' => $request->image
         ];
+
+        if($request->file('image')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $updateData['image'] = $request->file('image')->store('post-image');
+        }
 
         $res_updated = $this->database->getReference($this->tablename.'/'.$key)->update($updateData);
         if($res_updated){
@@ -128,5 +148,17 @@ class AdminController extends Controller
         else{
             return redirect('/admin/dokter')->with('status','Dokter Not Deleted');
         }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * 
+     */
+    public function delete($dokter)
+    {
+        if($dokter->image){
+            Storage::delete($dokter->oldImage);
+        }
+        return redirect('/admin/dokter')->with('status','Dokter Deleted Successfully');
     }
 }
