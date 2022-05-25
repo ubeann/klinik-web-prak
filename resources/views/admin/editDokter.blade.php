@@ -156,9 +156,7 @@
                 <div class="col-lg-8 table align-items-center mb-0">
                   <form method="POST" action="{{ url('/admin/dokter/update-dokter-'.$key) }}" class="mb-5" enctype="multipart/form-data">
                       @csrf
-
                       @method('PUT')
-
                       <div class="mb-3">
                       <label for="name">Nama Lengkap</label>
                       <div class="ms-md-auto">
