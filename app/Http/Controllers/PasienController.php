@@ -73,12 +73,12 @@ class PasienController extends Controller
     public function edit($id)
     {
         $key = $id;
-        $editDokter = $this->database->getReference($this->tablename)->getChild($key)->getValue();
-        if($editDokter){
-            return view('admin.editDokter', compact('editDokter','key'));
+        $editPasien = $this->database->getReference($this->tablename)->getChild($key)->getValue();
+        if($editPasien){
+            return view('admin.editPasien', compact('editPasien','key'));
         }
         else{
-            return redirect('/admin/dokter')->with('status','Dokter Not Added');
+            return redirect('/admin/pasien')->with('status','Dokter Not Added');
         }
     }
 
@@ -101,10 +101,10 @@ class PasienController extends Controller
 
         $res_updated = $this->database->getReference($this->tablename.'/'.$key)->update($updateData);
         if($res_updated){
-            return redirect('/admin/pasien')->with('status','Dokter Updated Successfully');
+            return redirect('/admin/pasien')->with('status','Pasien Updated Successfully');
         }
         else{
-            return redirect('/admin/pasien')->with('status','Dokter Not Updated');
+            return redirect('/admin/pasien')->with('status','Pasien Not Updated');
         }
     }
 
@@ -119,10 +119,10 @@ class PasienController extends Controller
         $key = $id;
         $del_data = $this->database->getReference($this->tablename.'/'.$key)->remove();
         if($del_data){
-            return redirect('/admin/dokter')->with('status','Dokter Deleted Successfully');
+            return redirect('/admin/pasien')->with('status','Pasien Deleted Successfully');
         }
         else{
-            return redirect('/admin/dokter')->with('status','Dokter Not Deleted');
+            return redirect('/admin/pasien')->with('status','Pasien Not Deleted');
         }
     }
 }
