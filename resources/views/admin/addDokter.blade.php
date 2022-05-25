@@ -154,7 +154,7 @@
             <div class="card-body px-0 pb-2">
               <div class="table-responsive p-0">
                 <div class="col-lg-8 table align-items-center mb-0">
-                  <form method="POST" action="{{ url('/admin/dokter/add') }}">
+                  <form method="POST" action="{{ url('/admin/dokter/add') }}" enctype="multipart/form-data">
                       @csrf
                       <div class="mb-3">
                       <label for="name">Nama Lengkap</label>
@@ -204,6 +204,16 @@
                               <input type="text" name="phone" class="form-control">
                             </div>
                           </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="image" class="form-label">Tambahkan Gambar</label>
+                        <img class="img-preview img-fluid mb-3 col-sm-5">
+                        <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
+                        @error('image')
+                        <div class="invalid-feedback">
+                          {{ $message }}
+                        </div>
+                        @enderror
                       </div>
                       <div class="mb-3 px-3">
                         <a href="/admin/dokter">
@@ -310,6 +320,21 @@
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+
+    function previewImage(){
+      const image = document.querySelector('#image');
+    const imgPreview = document.querySelector('.img-preview');
+
+    imgPreview.style.display = 'block';
+
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(image.files[0]);
+
+    oFReader.onload = function(oFREvent){
+      imgPreview.src = oFREvent.target.result;
+    }
+    }
+    
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
