@@ -164,6 +164,7 @@
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Spesialisasi</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Alamat</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No telp</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                       <th class="text-secondary opacity-7"></th>
                     </tr>
@@ -198,6 +199,9 @@
                         <p class="text-xs text-secondary mb-0">{{ $item['phone'] }}</p>
                       </td>
                       <td class="align-middle text-center text-sm">
+                          <img src="{{ asset('storage/ . $dokter->image') }}" alt="{{ $item['image'] }}" class="img-fluid mt-3">
+                      </td>
+                      <td class="align-middle text-center text-sm">
                         <a href="{{ url('/admin/dokter/edit-'.$key) }}" class="badge bg-warning md-18">
                           <div class="text-white text-center d-flex align-items-center justify-content-center">
                             <span class="material-icons md-18">edit</span>
@@ -212,7 +216,7 @@
                     </tr>
                     @empty 
                     <tr>
-                      <td colspan="8">No Record Found</td>
+                      <td colspan="9">No Record Found</td>
                     </tr>
                     @endforelse
                   </tbody>
