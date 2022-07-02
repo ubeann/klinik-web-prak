@@ -33,9 +33,9 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dokter</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Pemeriksaan</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Dokter</h6>
+          <h6 class="font-weight-bolder mb-0">Pemeriksaan</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -149,7 +149,7 @@
           <div class="card my-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Dokter</h6>
+                <h6 class="text-white text-capitalize ps-3">Pemeriksaan</h6>
               </div>
             </div>
             <div class="card-body px-0 pb-2">
@@ -157,63 +157,38 @@
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id Dokter</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Dokter</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tgl Lahir</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No_SIP</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Spesialisasi</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Alamat</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No telp</th>{{-- 
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image</th> --}}
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id Pemeriksaan</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Dokter Pemeriksa</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id Pasien</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Pasien</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tanggal Pemeriksaan</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Keterangan</th>
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($dokters as $d)
+                    {{-- @php $i=1; @endphp
+                    @forelse ($pemeriksaan as $key => $item)
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
-                            <p class="text-xs text-secondary mb-0">{{ $d->id }}</p>
+                            <p class="text-xs text-secondary mb-0">{{ $i++ }}</p>
                           </div>
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">{{ $d->dokter_name }}</p>
+                        <p class="text-xs text-secondary mb-0">{{ $item['name'] }}</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">{{ $d->tgl_lahir }}</p>
+                        <p class="text-xs text-secondary mb-0">{{ $item['birth'] }}</p>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">{{ $d->no_SIP }}</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">{{ $d->sps }}</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">{{ $d->alamat }}</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">{{ $d->no_telp }}</p>
-                      </td>
-                      {{-- <td class="align-middle text-center text-sm">
-                          <img src="{{ asset('storage/ . $dokter->image') }}" alt="{{ $item['image'] }}" class="img-fluid mt-3">
-                      </td> --}}
-                      <td class="align-middle text-center text-sm">
-                        <a href="{{ url('/admin/dokter/edit-'.$d->id) }}" class="badge bg-warning md-18">
-                          <div class="text-white text-center d-flex align-items-center justify-content-center">
-                            <span class="material-icons md-18">edit</span>
-                          </div>
-                        </a>
-                        <a href="{{ url('/admin/dokter/delete-'.$d->id) }}" class="badge bg-danger" onclick="return confirm('Are you sure?')" >
-                          <div class="text-white text-center d-flex align-items-center justify-content-center">
-                            <span class="material-icons md-18">delete</span>
-                          </div>
-                        </a>
-                    </td>
                     </tr>
-                    @endforeach
+                    @empty 
+                    <tr>
+                      <td colspan="6">No Record Found</td>
+                    </tr>
+                    @endforelse --}}
                   </tbody>
                 </table>
               </div>
@@ -221,13 +196,14 @@
           </div>
         </div>
       </div>
+      
         </div>
       </div>
     </div>
     </div>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-right pt-3 pb-2 mb-3 border-bottom float-right">
       <div class="btn-toolbar mb-0 btn text-right mt-2">
-        <div class="btn-group me-2 float-right"><a href="/admin/dokter/add" class="btn btn-primary mb-3 btn text-right">Add Dokter</a></div>
+        <div class="btn-group me-2 float-right"><a href="/admin/pemeriksaan/add" class="btn btn-primary mb-3 btn text-right">Add Pemeriksaan</a></div>
       </div>
     </div>
   </main>

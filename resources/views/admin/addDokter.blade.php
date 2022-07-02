@@ -169,7 +169,7 @@
                           <label for="birth">Tanggal Lahir</label>
                           <div class="ms-md-auto">
                             <div class="input-group input-group-outline">
-                              <input type="text" name="birth" class="form-control">
+                              <input name="birth" type="date" class="form-control">
                             </div>
                           </div>
                           </div>
@@ -185,7 +185,7 @@
                             <label for="name">Spesialisasi</label>
                             <div class="ms-md-auto">
                               <div class="input-group input-group-outline">
-                                <input type="text" name="spesialisasi" class="form-control">
+                                <input type="text" name="sps" class="form-control">
                               </div>
                             </div>
                           </div>
@@ -205,7 +205,7 @@
                             </div>
                           </div>
                       </div>
-                      <div class="mb-3">
+                      {{-- <div class="mb-3">
                         <label for="image" class="form-label">Tambahkan Gambar</label>
                         <img class="img-preview img-fluid mb-3 col-sm-5">
                         <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
@@ -214,7 +214,7 @@
                           {{ $message }}
                         </div>
                         @enderror
-                      </div>
+                      </div> --}}
                       <div class="mb-3 px-3">
                         <a href="/admin/dokter">
                           <button type="submit" class="btn btn-primary">Add Dokter</button>
@@ -222,8 +222,6 @@
                       </div>
                   </form>
                   </div>
-              
-                  
               </div>
             </div>
           </div>

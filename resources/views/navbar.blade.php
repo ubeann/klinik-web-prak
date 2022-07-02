@@ -14,9 +14,22 @@
         <li class="nav-item {{ ($title === "About") ? 'active' : ''}}">
           <a class="nav-link" href="/about">About Us</a>
         </li>
+        @auth
         <li class="nav-item">
           <a class="nav-link" href="/admin">Dashboard</a>
         </li>
+        <li class="nav-item">
+          <form action ="/logout" method="post">
+            @csrf
+            <button class="btn btn-primary ml-lg-3" type="submit">
+              Logout
+          </form>
+        </li>
+        @else
+        <li class="nav-item">
+          <a class="btn btn-primary ml-lg-3" href="/login">Login / Register</a>
+        </li>
+        @endauth
       </ul>
     </div> <!-- .navbar-collapse -->
   </div> <!-- .container -->

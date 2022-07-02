@@ -158,11 +158,8 @@
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tanggal</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No. Urut</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id Pasien</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Pasien</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status Pasien</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tgl Kedatangan</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Spesialis Dokter</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Dokter</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
@@ -182,39 +179,37 @@
                         <p class="text-xs text-secondary mb-0">1</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">1</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">Orion Genio</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Pasien Lama</p>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">26/04/2022</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Orthodontist</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">Dr. Stein Albert</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Selesai</p>
+                        <p class="text-xs text-secondary mb-0">Menunggu Kedatangan</p>
+                        {{--   @if ()
+                            <section id="dtg"><p class="text-xs text-secondary mb-0">Sudah Datang</p></section>
+                          @elseif
+                          <section id="sls"><p class="text-xs text-secondary mb-0">Selesai</p></section>
+                          @else
+                          <section id="batal"><p class="text-xs text-secondary mb-0">Batal</p></section>
+                        @endif --}}
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <a href="" class="badge bg-info md-18">
-                          <div class="text-white text-center d-flex align-items-center justify-content-center">
+                        <a href="#dtg" class="badge bg-info md-18">
+                          <div class="text-white text-center d-flex align-items-center justify-content-center" name="datang">
                             <span class="material-icons md-18">hourglass_full</span>
                           </div>
                         </a>
-                        <a href="" class="badge bg-success md-18">
-                          <div class="text-white text-center d-flex align-items-center justify-content-center">
+                        <a href="#sls" class="badge bg-success md-18">
+                          <div class="text-white text-center d-flex align-items-center justify-content-center" name="selesai">
                             <span class="material-icons md-18">check</span>
                           </div>
                         </a>
-                        <a href="" class="badge bg-danger md-18">
-                          <div class="text-white text-center d-flex align-items-center justify-content-center">
+                        <a href="#batal" class="badge bg-danger md-18">
+                          <div class="text-white text-center d-flex align-items-center justify-content-center" name="batal">
                             <span class="material-icons md-18">close</span>
                           </div>
                         </a>
@@ -232,19 +227,10 @@
                         <p class="text-xs text-secondary mb-0">1</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">2</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">Joel Xander</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Pasien Baru</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">27/04/2022</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Orthodontist</p>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">Dr. Stein Albert</p>
@@ -282,19 +268,10 @@
                         <p class="text-xs text-secondary mb-0">3</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">3</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">Henry Cavill</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Pasien Lama</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">26/04/2022</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Dental</p>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">Dr. Alexa Melvin</p>
@@ -332,19 +309,10 @@
                         <p class="text-xs text-secondary mb-0">1</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">4</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">Kim Taehyung</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Pasien Lama</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">25/04/2022</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Dental</p>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">Dr. Alexa Melvin</p>
@@ -382,19 +350,10 @@
                         <p class="text-xs text-secondary mb-0">2</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">5</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">Minu Yoon</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Pasien Baru</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">25/04/2022</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">Orthodontist</p>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <p class="text-xs text-secondary mb-0">Dr. Stein Albert</p>

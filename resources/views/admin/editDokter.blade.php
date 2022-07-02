@@ -154,14 +154,14 @@
             <div class="card-body px-0 pb-2">
               <div class="table-responsive p-0">
                 <div class="col-lg-8 table align-items-center mb-0">
-                  <form method="POST" action="{{ url('/admin/dokter/update-dokter-'.$key) }}" class="mb-5" enctype="multipart/form-data">
-                      @csrf
+                  <form method="POST" action="{{ url('/admin/dokter/update-dokter-'.$dokters->id) }}" class="mb-5" enctype="multipart/form-data">
+                      {{ csrf_field() }}
                       @method('PUT')
                       <div class="mb-3">
                       <label for="name">Nama Lengkap</label>
                       <div class="ms-md-auto">
                         <div class="input-group input-group-outline">
-                          <input type="text" name="name" value="{{ $editDokter['name'] }}" class="form-control">
+                          <input type="text" name="name" value="{{ $dokters->dokter_name }}" class="form-control">
                         </div>
                       </div>
                     </div>
@@ -169,7 +169,7 @@
                           <label for="birth">Tanggal Lahir</label>
                           <div class="ms-md-auto">
                             <div class="input-group input-group-outline">
-                              <input type="text" name="birth" value="{{ $editDokter['birth'] }}" class="form-control">
+                              <input type="text" name="birth" value="{{ $dokters->tgl_lahir }}" class="form-control">
                             </div>
                           </div>
                           </div>
@@ -177,7 +177,7 @@
                             <label for="name">No SIP</label>
                             <div class="ms-md-auto">
                               <div class="input-group input-group-outline">
-                                <input type="text" name="SIP" value="{{ $editDokter['no_SIP'] }}" class="form-control">
+                                <input type="text" name="SIP" value="{{ $dokters->no_SIP }}" class="form-control">
                               </div>
                             </div>
                           </div>
@@ -185,7 +185,7 @@
                             <label for="name">Spesialisasi</label>
                             <div class="ms-md-auto">
                               <div class="input-group input-group-outline">
-                                <input type="text" name="spesialisasi" value="{{ $editDokter['sps'] }}" class="form-control">
+                                <input type="text" name="sps" value="{{ $dokters->sps }}" class="form-control">
                               </div>
                             </div>
                           </div>
@@ -193,7 +193,7 @@
                           <label for="address">Alamat</label>
                           <div class="ms-md-auto">
                             <div class="input-group input-group-outline">
-                              <input type="text" name="alamat" value="{{ $editDokter['alamat'] }}" class="form-control">
+                              <input type="text" name="alamat" value="{{ $dokters->alamat }}" class="form-control">
                             </div>
                           </div>
                           </div>
@@ -201,11 +201,11 @@
                           <label for="phone">Nomor Telepon</label>
                           <div class="ms-md-auto">
                             <div class="input-group input-group-outline">
-                              <input type="text" name="phone" value="{{ $editDokter['phone'] }}" class="form-control">
+                              <input type="text" name="phone" value="{{ $dokters->no_telp }}" class="form-control">
                             </div>
                           </div>
                       </div>
-                      <div class="mb-3">
+                      {{-- <div class="mb-3">
                         <label for="image" class="form-label">Ganti Gambar</label>
                         <input type="hidden" name="oldImage" value="{{ asset('storage/ . $dokter->image') }}">
                         <img src="{{ asset('storage/ . $dokter->image') }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
@@ -215,7 +215,7 @@
                           {{ $message }}
                         </div>
                         @enderror
-                      </div>
+                      </div> --}}
                       <div class="mb-3 px-3">
                         <a href="/admin/dokter">
                           <button type="submit" class="btn btn-primary">Save</button>

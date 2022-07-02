@@ -169,7 +169,7 @@
                         <label for="birth">Tanggal Lahir</label>
                         <div class="ms-md-auto">
                           <div class="input-group input-group-outline">
-                            <input type="text" name="birth" class="form-control">
+                            <input name="birth" type="date" class="form-control">
                           </div>
                         </div>
                         </div>

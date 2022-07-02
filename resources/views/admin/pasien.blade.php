@@ -166,46 +166,41 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @php $i=1; @endphp
-                    @forelse ($pasien as $key => $item)
+                    @foreach ($pasien as $p)
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
-                            <p class="text-xs text-secondary mb-0">{{ $i++ }}</p>
+                            <p class="text-xs text-secondary mb-0">{{ $p->id }}</p>
                           </div>
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">{{ $item['name'] }}</p>
+                        <p class="text-xs text-secondary mb-0">{{ $p->nama_pasien }}</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">{{ $item['birth'] }}</p>
+                        <p class="text-xs text-secondary mb-0">{{ $p->tgl_lahir }}</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">{{ $item['alamat'] }}</p>
+                        <p class="text-xs text-secondary mb-0">{{ $p->alamat }}</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">{{ $item['phone'] }}</p>
+                        <p class="text-xs text-secondary mb-0">{{ $p->no_telp }}</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <a href="{{ url('/admin/pasien/edit-'.$key) }}" class="badge bg-warning md-18">
+                        <a href="{{ url('/admin/pasien/edit-'.$p->id) }}" class="badge bg-warning md-18">
                           <div class="text-white text-center d-flex align-items-center justify-content-center">
                             <span class="material-icons md-18">edit</span>
                           </div>
                         </a>
-                        <a href="{{ url('/admin/pasien/delete-'.$key) }}" class="badge bg-danger">
+                        <a href="{{ url('/admin/pasien/delete-'.$p->id) }}" class="badge bg-danger">
                           <div class="text-white text-center d-flex align-items-center justify-content-center">
                             <span class="material-icons md-18">delete</span>
                           </div>
                         </a>
                     </td>
                     </tr>
-                    @empty 
-                    <tr>
-                      <td colspan="5">No Record Found</td>
-                    </tr>
-                    @endforelse
+                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -217,14 +212,6 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-right pt-3 pb-2 mb-3 border-bottom float-right">
       <div class="btn-toolbar mb-0 btn text-right mt-2">
         <div class="btn-group me-2 float-right"><a href="/admin/pasien/add" class="btn btn-primary mb-3 btn text-right">Add Pasien</a></div>
-        <div class="btn-group me-2">
-          <button type="button" class="btn btn-sm btn-outline-secondary btn text-right">Share</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary btn text-right">Export</button>
-        </div>
-        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle btn text-right">
-          <span data-feather="calendar"></span>
-          This week
-        </button>
       </div>
     </div>
   </main>
