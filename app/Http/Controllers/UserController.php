@@ -2,43 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Inspection;
+use App\Models\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function create(Request $request)
-    {   
-        $pw = bcrypt($request->password);
-        User::create([
-            'name' => $request->name, 
-            'email' => $request->email,
-            'password' => $pw,
-        ]);
-        return redirect()->route('home');
-    }
+    public function login(Request $request) {
+        // Auth guard check
+        if (Auth::guard('admin')->check()) {
+            return redirect()->route('landing');
+        } else {
+            // Validate Request
+            $request->validate([
+                'email' => 'required|string|email|max:255',
+                'password' => 'required|string|min:6',
+            ]);
 
-
-    public function authenticate(Request $request){
-        $credentials = $request->validate([
-            'email' => 'required',
-            'password'=> 'required'
-        ]);
-
-        if (Auth::attempt($credentials)){
-            $request->session()->regenerate();
-            return redirect()->route('home');
+            // Auth using admin
+            if (auth('admin')->attempt($request->only('email', 'password'))) {
+                return redirect()->route('admin.dashboard');
+            } else {
+                return redirect()->route('admin.login.form')->with('error', 'Email or password incorrect')->withInput($request->only('email'));
+            }
         }
-        
-        dd("eror");
-        return back()->with('loginError', 'Login Failed');
     }
 
-    public function logout(Request $request){
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect('/');
+    public function dashboard() {
+        $title = "Welcome to Dashboard, " . Auth::guard('admin')->user()->name;
+        $nav = "dashboard";
+        $patient = Patient::all()->count();
+        $inspection = 'Rp ' . number_format(Inspection::all()->sum('price'));
+        return view('admin.dashboard', compact('nav', 'title', 'patient', 'inspection'));
+    }
+
+    public function logout() {
+        auth('admin')->logout();
+        return redirect()->route('landing');
     }
 }

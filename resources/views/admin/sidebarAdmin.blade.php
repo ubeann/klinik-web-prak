@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white {{-- {{ ($title === "Dashboard") ? 'active bg-gradient-primary' : ''}} --}}" href="/admin">
+          <a class="nav-link text-white {{ ($nav === "dashboard") ? 'active bg-gradient-primary' : ''}}" href="{{ route('admin.dashboard') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
@@ -18,7 +18,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{-- {{ ($title === "Dokter") ? 'active bg-gradient-primary' : ''}} --}}" href="/admin/dokter">
+          <a class="nav-link text-white {{ ($nav === "doctor") ? 'active bg-gradient-primary' : ''}}" href="{{ route('admin.doctor.index') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">account_box</i>
             </div>
@@ -26,7 +26,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{-- {{ ($title === "Pasien") ? 'active bg-gradient-primary' : ''}} --}}" href="/admin/pasien">
+          <a class="nav-link text-white {{ ($nav === "patient") ? 'active bg-gradient-primary' : ''}}" href="{{ route('admin.patient.index') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">people</i>
             </div>
@@ -34,7 +34,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{-- {{ ($title === "Pendaftaran") ? 'active bg-gradient-primary' : ''}} --}}" href="/admin/pendaftaran">
+          <a class="nav-link text-white {{ ($nav === "registration") ? 'active bg-gradient-primary' : ''}}" href="{{ route('admin.registration.index') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">assignment</i>
             </div>
@@ -42,48 +42,29 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="/admin/pemeriksaan">
+          <a class="nav-link text-white {{ ($nav === "inspection") ? 'active bg-gradient-primary' : ''}}" href="{{ route('admin.inspection.index') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">receipt</i>
+              <i class="material-icons opacity-10">local_hospital</i>
             </div>
             <span class="nav-link-text ms-1">Pemeriksaan</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/notifications.html">
+          <a class="nav-link text-white {{ ($nav === "payment") ? 'active bg-gradient-primary' : ''}}" href="{{ route('admin.payment.index') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">receipt</i>
             </div>
             <span class="nav-link-text ms-1">Pembayaran</span>
           </a>
         </li>
-        {{-- <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
-        </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/profile.html">
+          <a class="nav-link text-white " href="{{ route('admin.logout') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">person</i>
+              <i class="material-icons opacity-10">logout</i>
             </div>
-            <span class="nav-link-text ms-1">Profile</span>
+            <span class="nav-link-text ms-1">Keluar</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/sign-in.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">login</i>
-            </div>
-            <span class="nav-link-text ms-1">Sign In</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/sign-up.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">assignment</i>
-            </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
-          </a>
-        </li> --}}
       </ul>
     </div>
   </aside>

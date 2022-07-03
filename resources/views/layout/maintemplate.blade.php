@@ -17,7 +17,7 @@
       <div class="container text-center wow zoomIn">
         <span class="subhead">Dental clinic in Banjarbaru, South Kalimantan</span>
         <h1 class="display-4">Family Dental Care</h1>
-        
+
         <a href="#appointment" class="btn btn-primary">Make an Appointment</a>
       </div>
     </div>
@@ -121,6 +121,6 @@
 <script src="{{ asset('assets/vendor/wow/wow.min.js') }}"></script>
 
 <script src="{{ asset('assets/js/theme.js') }}"></script>
-  
+
 </body>
 </html>
