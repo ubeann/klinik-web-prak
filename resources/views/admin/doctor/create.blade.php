@@ -240,8 +240,10 @@
                             @enderror
                         </div>
                       </div>
-                      <div class="mb-3 px-3">
-                          <button type="submit" class="btn btn-primary">Add Dokter</button>
+                      <div>
+                          <div class="mb-3 px-3">
+                              <button type="submit" class="btn btn-primary">Add Dokter</button>
+                          </div>
                       </div>
                   </form>
                   </div>

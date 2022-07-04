@@ -172,6 +172,7 @@
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Dokter Pemeriksa</th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Spesialis</th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Pasien</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipe Pemeriksaan</th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Biaya</th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actions</th>
                     </tr>
@@ -184,6 +185,7 @@
                             <td class="text-center text-sm font-weight-bold">{{ $inspection->registration->doctor->name }}</td>
                             <td class="text-center text-sm font-weight-bold">{{ $inspection->registration->doctor->specialization }}</td>
                             <td class="text-center text-sm font-weight-bold">{{ $inspection->registration->patient->name }}</td>
+                            <td class="text-center text-sm font-weight-bold">{{ $inspection->type }}</td>
                             <td class="text-center text-sm font-weight-bold">{{ $inspection->price_formatted }}</td>
                             <td class="text-center text-sm font-weight-bold">
                                 <a href="{{ route('admin.inspection.edit', $inspection->id) }}" class="btn btn-sm btn-warning">
