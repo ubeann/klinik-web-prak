@@ -134,7 +134,14 @@ class InspectionController extends Controller
     public function payment() {
         $title = "List of Payments";
         $nav = 'payment';
-        $inspections = Inspection::all();
+        $inspections = Inspection::all()
+            ->sortBy(function ($inspection) {
+                return $inspection->registration->patient->name;
+            })
+            ->sortBy(function ($inspection) {
+                return $inspection->registration->doctor->name;
+            })
+            ->sortBy('arrival_date');
 
         // Return view
         return view('admin.payment', compact('title', 'nav', 'inspections'));
