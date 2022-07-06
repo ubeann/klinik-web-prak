@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Patient;
+use App\Models\Registration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -229,9 +230,10 @@ class PatientController extends Controller
     public function registration() {
         $title = "Dashboard Patient";
         $nav = "registration";
-        $registrations = Auth::guard('patient')
-            ->user()
-            ->registrations
+        $registrations = Registration::all()
+            ->sortBy(function ($registration) {
+                return $registration->patient->name;
+            })
             ->sortBy(function ($registration) {
                 return $registration->doctor->name;
             })

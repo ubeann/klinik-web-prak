@@ -170,32 +170,34 @@
                   </thead>
                   <tbody>
                     @forelse ($registrations as $registration)
-                        <tr>
-                            <td class="align-middle text-center text-sm">
-                                <p class="text-xs text-secondary mb-0">{{ $registration->created_at }}</p>
-                            </td>
-                            <td class="align-middle text-center text-sm">
-                                <p class="text-xs text-secondary mb-0">{{ $loop->iteration }}</p>
-                            </td>
-                            <td class="align-middle text-center text-sm">
-                                <p class="text-xs text-secondary mb-0">{{ $registration->arrival_date }}</p>
-                            </td>
-                            <td class="align-middle text-center text-sm">
-                                <p class="text-xs text-secondary mb-0">{{ $registration->doctor->name }}</p>
-                            </td>
-                            <td class="align-middle text-center text-sm">
-                                <p class="text-xs text-secondary mb-0">{{ $registration->doctor->specialization }}</p>
-                            </td>
-                            <td class="align-middle text-center text-sm">
-                                @if ($registration->status == 'pending')
-                                    <p class="text-xs text-secondary mb-0">{{ Str::ucfirst($registration->status) }}</p>
-                                @elseif ($registration->status == 'accepted')
-                                    <p class="text-xs text-success mb-0">{{ Str::ucfirst($registration->status) }}</p>
-                                @elseif ($registration->status == 'declined')
-                                    <p class="text-xs text-danger mb-0">{{ Str::ucfirst($registration->status) }}</p>
-                                @endif
-                            </td>
-                        </tr>
+                        @if ($registration->patient_id == Auth::guard('patient')->user()->id)
+                            <tr>
+                                <td class="align-middle text-center text-sm">
+                                    <p class="text-xs text-secondary mb-0">{{ $registration->created_at }}</p>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    <p class="text-xs text-secondary mb-0">{{ $loop->iteration }}</p>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    <p class="text-xs text-secondary mb-0">{{ $registration->arrival_date }}</p>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    <p class="text-xs text-secondary mb-0">{{ $registration->doctor->name }}</p>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    <p class="text-xs text-secondary mb-0">{{ $registration->doctor->specialization }}</p>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    @if ($registration->status == 'pending')
+                                        <p class="text-xs text-secondary mb-0">{{ Str::ucfirst($registration->status) }}</p>
+                                    @elseif ($registration->status == 'accepted')
+                                        <p class="text-xs text-success mb-0">{{ Str::ucfirst($registration->status) }}</p>
+                                    @elseif ($registration->status == 'declined')
+                                        <p class="text-xs text-danger mb-0">{{ Str::ucfirst($registration->status) }}</p>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endif
                     @empty
                         <tr>
                             <td class="align-middle text-center text-sm" colspan="7">
