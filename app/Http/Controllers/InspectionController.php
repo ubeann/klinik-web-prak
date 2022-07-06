@@ -138,9 +138,6 @@ class InspectionController extends Controller
             ->sortBy(function ($inspection) {
                 return $inspection->registration->patient->name;
             })
-            ->sortBy(function ($inspection) {
-                return $inspection->registration->doctor->name;
-            })
             ->sortBy('arrival_date');
 
         // Return view
