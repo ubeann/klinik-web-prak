@@ -229,7 +229,13 @@ class PatientController extends Controller
     public function registration() {
         $title = "Dashboard Patient";
         $nav = "registration";
-        $registrations = Auth::guard('patient')->user()->registrations;
+        $registrations = Auth::guard('patient')
+            ->user()
+            ->registrations
+            ->sortBy(function ($registration) {
+                return $registration->doctor->name;
+            })
+            ->sortBy('arrival_date');
 
         // Return view
         return view('patient.registration.index', compact('title', 'nav', 'registrations'));

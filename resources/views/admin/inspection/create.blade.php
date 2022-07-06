@@ -169,19 +169,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label for="name">Nama Pemeriksaan</label>
                             <div class="ms-md-auto">
-                                <div class="input-group input-group-outline mb-3 px-2">
-                                    <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}">
-                                    @error('name')
+                                <div class="input-group input-group-outline mb-3 px-2"> --}}
+                                    <input type="hidden" name="name" id="name" class="form-control" value="default">
+                                    {{-- @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="mb-3">
                             <label for="type">Tipe Pemeriksaan</label>
                             <div class="ms-md-auto">

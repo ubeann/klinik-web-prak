@@ -25,6 +25,11 @@ class InspectionController extends Controller
         $nav = $this->nav;
         $registrations = Registration::whereDoesntHave('inspection')
             ->where('status', '=', 'accepted')
+            ->join('patients', 'registrations.patient_id', '=', 'patients.id')
+            ->join('doctors', 'registrations.doctor_id', '=', 'doctors.id')
+            ->orderBy('patients.name')
+            ->orderBy('doctors.name')
+            ->orderBy('arrival_date')
             ->get();
 
         // Return view

@@ -169,10 +169,8 @@
                     <tr>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tanggal Pemeriksaan</th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Pemeriksaan</th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipe Pemeriksaan</th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Pasien</th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Dokter</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipe Pemeriksaan</th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Biaya</th>
                     </tr>
                   </thead>
@@ -181,10 +179,8 @@
                         <tr>
                             <td class="text-center text-sm font-weight-bold">{{ $loop->iteration }}</td>
                             <td class="text-center text-sm font-weight-bold">{{ $inspection->registration->arrival_date }}</td>
-                            <td class="text-center text-sm font-weight-bold">{{ $inspection->service->name }}</td>
-                            <td class="text-center text-sm font-weight-bold">{{ $inspection->type }}</td>
                             <td class="text-center text-sm font-weight-bold">{{ $inspection->registration->patient->name }}</td>
-                            <td class="text-center text-sm font-weight-bold">{{ $inspection->registration->doctor->name }}</td>
+                            <td class="text-center text-sm font-weight-bold">{{ $inspection->type }}</td>
                             <td class="text-end text-sm font-weight-bold">{{ $inspection->price_formatted }}</td>
                         </tr>
                     @empty
