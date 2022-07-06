@@ -190,7 +190,7 @@
                     @endforelse
                     @if ($inspections->count() > 0)
                         <tr>
-                            <td colspan="6" class="text-end text-sm font-weight-bold">Total:</td>
+                            <td colspan="4" class="text-end text-sm font-weight-bold">Total:</td>
                             <td class="text-end text-sm font-weight-bold">Rp {{ number_format($inspections->sum('price'), 2, ',', '.') }}</td>
                         </tr>
                     @endif
