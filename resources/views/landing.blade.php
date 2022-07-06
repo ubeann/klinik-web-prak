@@ -49,7 +49,7 @@
     </div> <!-- .bg-light -->
     </div> <!-- .bg-light -->
 
-    <div class="page-section">
+    {{-- <div class="page-section">
         <div class="container">
             <h1 class="text-center mb-5 wow fadeInUp">Our Dentist</h1>
 
@@ -75,7 +75,7 @@
                 @endforelse
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- .page-section -->
     <section id="appointment">
