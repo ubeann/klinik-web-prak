@@ -56,12 +56,12 @@
     <!-- End Navbar -->
     <div class="container-fluid py-4">
         @if (session('success'))
-            <div class="alert alert-success mb-2">
+            <div class="alert alert-success text-white mb-4">
                 <span>{{ session('success') }}</span>
             </div>
         @endif
         @if (session('error'))
-            <div class="alert alert-danger mb-2">
+            <div class="alert alert-danger text-white mb-4">
                 <span>{{ session('error') }}</span>
             </div>
         @endif
