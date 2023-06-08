@@ -22,7 +22,7 @@
   <link id="pagestyle" href="{{ asset('css/material-dashboard.css?v=3.0.2') }}" rel="stylesheet" />
 </head>
 
-<body class="">
+<body class="dark-version">
   <main class="main-content  mt-0">
     <section>
       <div class="page-header min-vh-100">
@@ -87,7 +87,7 @@
                     </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">{{ __('Register') }}
+                      <button type="submit" class="btn btn-lg bg-gradient-info btn-lg w-100 mt-4 mb-0">{{ __('Register') }}
                     </button>
                     </div>
                   </form>
@@ -95,7 +95,7 @@
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-2 text-sm mx-auto">
                     Already have an account?
-                    <a href="{{ route('patient.login.form') }}" class="text-primary text-gradient font-weight-bold">Sign in</a>
+                    <a href="{{ route('patient.login.form') }}" class="text-info text-gradient font-weight-bold">Sign in</a>
                   </p>
                 </div>
               </div>
