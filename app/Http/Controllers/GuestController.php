@@ -14,13 +14,6 @@ class GuestController extends Controller
         return view('landing', compact('nav', 'title', 'doctors'));
     }
 
-    public function about() {
-        $title = "About Us";
-        $nav = "about";
-        $doctors = Doctor::all();
-        return view('about', compact('nav', 'title', 'doctors'));
-    }
-
     public function formLogin() {
         // Auth guard check
         if (auth()->guard('patient')->check()) {

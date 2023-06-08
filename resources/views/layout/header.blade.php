@@ -43,7 +43,7 @@
             </nav>
 
             @auth('patient')
-                <a href="{{ route('patient.dashboard') }}" class="btn">Dashboard</a>
+                <a href="{{ route('patient.dashboard.registration.index') }}" class="btn">Dashboard</a>
             @endauth
 
             @guest('patient')

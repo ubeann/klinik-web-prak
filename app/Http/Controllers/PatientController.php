@@ -230,14 +230,9 @@ class PatientController extends Controller
     public function registration() {
         $title = "Dashboard Patient";
         $nav = "registration";
-        $registrations = Registration::all()
-            ->sortBy(function ($registration) {
-                return $registration->patient->name;
-            })
-            ->sortBy(function ($registration) {
-                return $registration->doctor->name;
-            })
-            ->sortBy('arrival_date');
+        $registrations = Registration::where('patient_id', auth('patient')->user()->id)
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         // Return view
         return view('patient.registration.index', compact('title', 'nav', 'registrations'));
