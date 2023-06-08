@@ -60,7 +60,6 @@
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Alamat</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">No telp</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Action</th>
-                      <th class="text-secondary"></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -96,7 +95,6 @@
                             </div>
                             </a>
                         </td>
-                        <td></td>
                     </tr>
                     @empty
                     <tr>
