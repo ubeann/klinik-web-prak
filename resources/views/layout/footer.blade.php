@@ -1,20 +1,180 @@
-<div class="container">
-    <div class="row px-md-3">
-      <div class="col-sm-6 col-lg-3 py-3">
-        <h5>Jadwal Praktek</h5>
-        <ul class="footer-menu">
-          <li><a href="#"><h6>Pagi : </h6></a></li>
-          <li><a href="#">Senin - Sabtu : 09.00 - 13.00 WITA</a></li>
-          <li><a href="#"><h6>Sore : </h6></a></li>
-          <li><a href="#">Senin - Sabtu : 16.30 - 21.00 WITA</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-6 col-lg-3 py-3">
-        <h5>Contact</h5>
-        <p class="footer-link mt-2">Ruko Komplek Griya Mawar Asri, Guntungmanggis, Landasan Ulin, Banjarbaru City, South Kalimantan 70731</p>
-        <a href="#" class="footer-link">0853-4872-8757</a>
-      </div>
+<footer class="footer">
+    <div class="footer-top section">
+        <div class="container">
+            <div class="footer-brand">
+                <a href="{{ route('landing') }}" class="logo">DentCare.</a>
+
+                <p class="footer-text">
+                    DentCare adalah Klinik Dokter Gigi Spesialis TERBESAR di Surabaya
+                    dengan komitmen memberikan layanan kesehatan gigi dan mulut yang expert,
+                    profesional, berkualitas, serta up-to-date dengan teknologi dental berstandar
+                    internasional.
+                </p>
+
+                <div class="schedule">
+                    <div class="schedule-icon">
+                        <ion-icon name="time-outline"></ion-icon>
+                    </div>
+
+                    <span class="span">
+                        Monday - Saturday:<br>
+                        9:00am - 10:00Pm
+                    </span>
+                </div>
+
+            </div>
+
+            <ul class="footer-list">
+                <li>
+                    <p class="footer-list-title">Other Links</p>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <span class="span">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <span class="span">About Us</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <span class="span">Services</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <span class="span">Project</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <span class="span">Our Team</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <span class="span">Latest Blog</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <ul class="footer-list">
+                <li>
+                    <p class="footer-list-title">Our Services</p>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <span class="span">Gum-Lifting</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <span class="span">Bleaching</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <span class="span">Operasi Gigi Bungsu</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <span class="span">Implan dan Penambalan Gigi</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <span class="span">Perawatan Kawat Gigi</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">
+                        <ion-icon name="add-outline"></ion-icon>
+                        <span class="span">Scalling</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <ul class="footer-list">
+                <li>
+                    <p class="footer-list-title">Contact Us</p>
+                </li>
+
+                <li class="footer-item">
+                    <div class="item-icon">
+                        <ion-icon name="location-outline"></ion-icon>
+                    </div>
+
+                    <address class="item-text">
+                        Jl. Ir. Hj. Soekarno, Universitas Airlangga, Surabaya.
+                    </address>
+                </li>
+
+                <li class="footer-item">
+                    <div class="item-icon">
+                        <ion-icon name="call-outline"></ion-icon>
+                    </div>
+                    <a href="tel:+62857792813405" class="footer-link">+62857792813405</a>
+                </li>
+
+                <li class="footer-item">
+                    <div class="item-icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </div>
+                    <a href="mailto:dentcare@gmail.com" class="footer-link">dentcare@gmail.com</a>
+                </li>
+            </ul>
+        </div>
     </div>
 
-    <hr>
-  </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <ul class="social-list">
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
