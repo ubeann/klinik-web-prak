@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon.png') }}">
-    <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon.svg') }}">
     <title>
         {{ $title }}
     </title>
@@ -78,12 +78,12 @@
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tgl</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No. Urut</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tgl Kedatangan</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Dokter</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Spesialis</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                      <th class="text-center text-uppercase text-white text-xxs font-weight-bolder">Tgl</th>
+                      <th class="text-center text-uppercase text-white text-xxs font-weight-bolder">No. Urut</th>
+                      <th class="text-center text-uppercase text-white text-xxs font-weight-bolder">Tgl Kedatangan</th>
+                      <th class="text-center text-uppercase text-white text-xxs font-weight-bolder">Nama Dokter</th>
+                      <th class="text-center text-uppercase text-white text-xxs font-weight-bolder">Spesialis</th>
+                      <th class="text-center text-uppercase text-white text-xxs font-weight-bolder">Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -91,23 +91,23 @@
                         @if ($registration->patient_id == Auth::guard('patient')->user()->id)
                             <tr>
                                 <td class="align-middle text-center text-sm">
-                                    <p class="text-xs text-secondary mb-0">{{ $registration->created_at }}</p>
+                                    <p class="text-xs text-white mb-0">{{ $registration->created_at }}</p>
                                 </td>
                                 <td class="align-middle text-center text-sm">
-                                    <p class="text-xs text-secondary mb-0">{{ $loop->iteration }}</p>
+                                    <p class="text-xs text-white mb-0">{{ $loop->iteration }}</p>
                                 </td>
                                 <td class="align-middle text-center text-sm">
-                                    <p class="text-xs text-secondary mb-0">{{ $registration->arrival_date }}</p>
+                                    <p class="text-xs text-white mb-0">{{ $registration->arrival_date }}</p>
                                 </td>
                                 <td class="align-middle text-center text-sm">
-                                    <p class="text-xs text-secondary mb-0">{{ $registration->doctor->name }}</p>
+                                    <p class="text-xs text-white mb-0">{{ $registration->doctor->name }}</p>
                                 </td>
                                 <td class="align-middle text-center text-sm">
-                                    <p class="text-xs text-secondary mb-0">{{ $registration->doctor->specialization }}</p>
+                                    <p class="text-xs text-white mb-0">{{ $registration->doctor->specialization }}</p>
                                 </td>
                                 <td class="align-middle text-center text-sm">
                                     @if ($registration->status == 'pending')
-                                        <p class="text-xs text-secondary mb-0">{{ Str::ucfirst($registration->status) }}</p>
+                                        <p class="text-xs text-white mb-0">{{ Str::ucfirst($registration->status) }}</p>
                                     @elseif ($registration->status == 'accepted')
                                         <p class="text-xs text-success mb-0">{{ Str::ucfirst($registration->status) }}</p>
                                     @elseif ($registration->status == 'declined')
@@ -119,7 +119,7 @@
                     @empty
                         <tr>
                             <td class="align-middle text-center text-sm" colspan="7">
-                                <p class="text-xs text-secondary mb-0">Tidak ada data</p>
+                                <p class="text-xs text-white mb-0">Tidak ada data</p>
                             </td>
                         </tr>
                     @endforelse

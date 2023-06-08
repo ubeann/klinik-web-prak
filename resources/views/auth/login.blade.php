@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon.png') }}">
-    <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon.svg') }}">
     <title>
         {{ Str::ucfirst($type ?? 'Patient') }} Login
     </title>
@@ -53,7 +53,7 @@
                                         @csrf
                                         <div class="input-group input-group-outline mb-3">
                                             <input id="email" name="email" type="email"
-                                                class="form-control @error('email') is-invalid @enderror"
+                                                class="form-control @error('email') is-invalid @enderror text-white"
                                                 placeholder="Email" name="email" value="{{ old('email') }}" required
                                                 autocomplete="email" autofocus>
                                             @error('email')
@@ -64,7 +64,7 @@
                                         </div>
                                         <div class="input-group input-group-outline mb-3">
                                             <input id="password" type="password"
-                                                class="form-control @error('password') is-invalid @enderror"
+                                                class="form-control @error('password') is-invalid @enderror text-white"
                                                 placeholder="Password" name="password" required
                                                 autocomplete="current-password">
 

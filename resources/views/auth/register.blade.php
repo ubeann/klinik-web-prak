@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon.png') }}">
-  <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
+  <link rel="icon" type="image/png" href="{{ asset('img/favicon.svg') }}">
   <title>
     {{ Str::ucfirst($type ?? 'Patient') }} Sign Up
   </title>
@@ -38,7 +38,7 @@
                   <form action="{{ route('patient.register.submit') }}" method="post" role="form">
                     @csrf
                     <div class="input-group input-group-outline mb-3">
-                      <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Nama Lengkap" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                      <input id="name" type="text" class="form-control @error('name') is-invalid @enderror text-white" placeholder="Nama Lengkap" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                         @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -46,7 +46,7 @@
                         @enderror
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email">
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror text-white" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email">
                           @error('email')
                             <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
@@ -54,7 +54,7 @@
                           @enderror
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                        <input id="number_phone" type="text" class="form-control @error('number_phone') is-invalid @enderror" placeholder="Nomor Telepon" name="number_phone" value="{{ old('number_phone') }}" required autocomplete="number_phone">
+                        <input id="number_phone" type="text" class="form-control @error('number_phone') is-invalid @enderror text-white" placeholder="Nomor Telepon" name="number_phone" value="{{ old('number_phone') }}" required autocomplete="number_phone">
                         @error('number_phone')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -62,7 +62,7 @@
                         @enderror
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                        <input id="birth_date" type="date" class="form-control @error('birth_date') is-invalid @enderror" placeholder="Tanggal Lahir" name="birth_date" value="{{ old('birth_date') }}" required autocomplete="birth_date">
+                        <input id="birth_date" type="date" class="form-control @error('birth_date') is-invalid @enderror text-white" placeholder="Tanggal Lahir" name="birth_date" value="{{ old('birth_date') }}" required autocomplete="birth_date">
                         @error('birth_date')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -70,7 +70,7 @@
                         @enderror
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                        <textarea id="address" class="form-control @error('address') is-invalid @enderror" placeholder="Alamat" name="address" required autocomplete="address" rows="3">{{ old('address') }}</textarea>
+                        <textarea id="address" class="form-control @error('address') is-invalid @enderror text-white" placeholder="Alamat" name="address" required autocomplete="address" rows="3">{{ old('address') }}</textarea>
                         @error('address')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -78,7 +78,7 @@
                         @enderror
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="current-password">
+                      <input id="password" type="password" class="form-control @error('password') is-invalid @enderror text-white" placeholder="Password" name="password" required autocomplete="current-password">
                       @error('password')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
