@@ -37,7 +37,8 @@ class UserController extends Controller
         $patient = Patient::all()->count();
         $doctor = Doctor::all()->count();
         $registration = Registration::all()->count();
-        return view('admin.dashboard', compact('nav', 'title', 'patient', 'doctor', 'registration'));
+        $registrations = Registration::latest()->take(5)->get();
+        return view('admin.dashboard', compact('nav', 'title', 'patient', 'doctor', 'registration', 'registrations'));
     }
 
     public function logout() {
