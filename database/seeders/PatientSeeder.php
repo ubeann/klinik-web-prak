@@ -17,7 +17,19 @@ class PatientSeeder extends Seeder
     {
         $faker = \Faker\Factory::create('id_ID');
         $password = Hash::make('password');
+        DB::table('patients')->insert([
+            'name' => $faker->name,
+            'email' => 'patient@mail.com',
+            'birth_date' => $faker->dateTimeBetween('-60 years', '-18 years')->format('Y-m-d'),
+            'number_phone' => $faker->phoneNumber,
+            'address' => $faker->address,
+            'password' => $password,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
         for ($i = 0; $i < 10; $i++) {
+            $password = Hash::make('password');
             DB::table('patients')->insert([
                 'name' => $faker->name,
                 'email' => $faker->email,

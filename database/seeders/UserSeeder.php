@@ -17,7 +17,16 @@ class UserSeeder extends Seeder
     {
         $faker = \Faker\Factory::create('id_ID');
         $password = Hash::make('password');
+        DB::table('users')->insert([
+            'name' => $faker->name,
+            'email' => 'admin@mail.com',
+            'password' => $password,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
         for ($i = 0; $i < 10; $i++) {
+            $password = Hash::make('password');
             DB::table('users')->insert([
                 'name' => $faker->name,
                 'email' => $faker->email,
