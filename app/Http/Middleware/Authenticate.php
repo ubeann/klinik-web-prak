@@ -16,11 +16,11 @@ class Authenticate extends Middleware
     {
         if (! $request->expectsJson()) {
             // check url has /admin/ in it
-            if (strpos($request->url(), '/admin/') !== false) {
-                return route('admin.login.form');
-            } else {
+            // if (strpos($request->url(), '/admin/') !== false) {
+            //     return route('admin.login.form');
+            // } else {
                 return route('patient.login.form');
-            }
+            // }
         }
     }
 }

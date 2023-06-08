@@ -46,9 +46,13 @@
                 <a href="{{ route('patient.dashboard.registration.index') }}" class="btn">Dashboard</a>
             @endauth
 
-            @guest('patient')
+            @auth('admin')
+                <a href="{{ route('admin.dashboard') }}" class="btn">Dashboard</a>
+            @endauth
+
+            @if(!Auth::guard('patient')->check() && !Auth::guard('admin')->check())
                 <a href="{{ route('patient.login.form') }}" class="btn">Login</a>
-            @endguest
+            @endif
 
             <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
                 <ion-icon name="menu-sharp" aria-hidden="true" class="menu-icon"></ion-icon>

@@ -16,7 +16,8 @@ class GuestController extends Controller
 
     public function formLogin() {
         // Auth guard check
-        if (auth()->guard('patient')->check()) {
+        // if (auth()->guard('patient')->check()) {
+        if (auth()->guard('patient')->check() || auth()->guard('admin')->check()) {
             return redirect()->route('landing');
         } else {
             $title = "Login Patient";
@@ -27,7 +28,8 @@ class GuestController extends Controller
 
     public function formRegister() {
         // Auth guard check
-        if (auth()->guard('patient')->check()) {
+        // if (auth()->guard('patient')->check()) {
+        if (auth()->guard('patient')->check() || auth()->guard('admin')->check()) {
             return redirect()->route('landing');
         } else {
             $title = "Register Patient";

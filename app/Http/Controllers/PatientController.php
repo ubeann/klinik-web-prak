@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Patient;
 use App\Models\Registration;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -15,7 +16,8 @@ class PatientController extends Controller
 
     public function register(Request $request) {
         // Auth guard check
-        if (auth()->guard('patient')->check()) {
+        // if (auth()->guard('patient')->check()) {
+        if (auth()->guard('patient')->check() || auth()->guard('admin')->check()) {
             return redirect()->route('landing');
         } else {
             // Check phone number
@@ -63,7 +65,8 @@ class PatientController extends Controller
 
     public function login(Request $request) {
         // Auth guard check
-        if (auth()->guard('patient')->check()) {
+        // if (auth()->guard('patient')->check()) {
+        if (auth()->guard('patient')->check() || auth()->guard('admin')->check()) {
             return redirect()->route('landing');
         } else {
             // Validate Request
@@ -71,6 +74,13 @@ class PatientController extends Controller
                 'email' => 'required|string|email|max:255',
                 'password' => 'required|string|min:6',
             ]);
+
+            // Check if email admin
+            $admin = User::where('email', $request->input('email'))->first();
+            if ($admin && Hash::check($request->input('password'), $admin->password)) {
+                auth('admin')->login($admin);
+                return redirect()->route('admin.dashboard');
+            }
 
             // Check if email exists
             $patient = Patient::where('email', $request->input('email'))->first();

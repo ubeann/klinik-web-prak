@@ -57,14 +57,14 @@ Route::group(['as' => 'patient.'], function () {
 
 // Admin Routes
 Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
-    // Must be Guest
-    Route::group(['middleware' => ['guest']], function () {
-        // Login
-        Route::group(['as' => 'login.', 'prefix' => 'login'], function () {
-            Route::get('/', [GuestController::class, 'formAdmin'])->name('form');
-            Route::post('/', [UserController::class, 'login'])->name('submit');
-        });
-    });
+    // Must be Guest (Merge Login Portal)
+    // Route::group(['middleware' => ['guest']], function () {
+    //     // Login
+    //     Route::group(['as' => 'login.', 'prefix' => 'login'], function () {
+    //         Route::get('/', [GuestController::class, 'formAdmin'])->name('form');
+    //         Route::post('/', [UserController::class, 'login'])->name('submit');
+    //     });
+    // });
 
     // Must be Admin
     Route::group(['middleware' => ['auth:admin']], function () {
