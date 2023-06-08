@@ -25,7 +25,7 @@
 </head>
 
 <body class="g-sidenav-show  bg-gray-200 dark-version">
-    @include('admin.component.sidebarAdmin', ['nav' => ' doctor'])
+    @include('admin.component.sidebarAdmin', ['nav' => 'doctor'])
 
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
@@ -122,6 +122,7 @@
                                                     </div>
                                                 </a>
                                             </td>
+                                            <td></td>
                                         </tr>
                                         @empty
                                         <tr>
