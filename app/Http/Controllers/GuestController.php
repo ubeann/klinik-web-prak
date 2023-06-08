@@ -36,6 +36,10 @@ class GuestController extends Controller
         }
     }
 
+    public function admin() {
+        return redirect()->route('admin.dashboard');
+    }
+
     public function formAdmin() {
         // Auth guard check
         if (auth()->guard('admin')->check()) {

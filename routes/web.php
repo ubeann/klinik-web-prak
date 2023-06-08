@@ -21,6 +21,7 @@ use App\Http\Controllers\UserController;
 
 // Guest Area
 Route::get('/', [GuestController::class, 'landing'])->name('landing');
+Route::get('admin', [GuestController::class, 'admin'])->name('admin');
 
 // Patient Routes
 Route::group(['as' => 'patient.'], function () {
