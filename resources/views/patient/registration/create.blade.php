@@ -20,6 +20,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('css/material-dashboard.css?v=3.0.2') }}" rel="stylesheet" />
+
+    <style>
+    </style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-200 dark-version">
@@ -100,7 +103,7 @@
                                 <label for="doctor_id">Pilih Dokter</label>
                                 <div class="ms-md-auto">
                                     <div class="input-group input-group-outline mb-3">
-                                        <select name="doctor_id" id="doctor_id" class="form-control text-white">
+                                        <select name="doctor_id" id="doctor_id" class="form-control text-white" onfocus="this.classList.remove('text-white')" onblur="this.classList.add('text-white')" onchange="this.classList.add('text-white')" required>
                                             @forelse ($doctors as $doctor)
                                                 <option value="{{ $doctor->id }}">{{ $doctor->name }} - {{ $doctor->specialization }}</option>
                                             @empty
