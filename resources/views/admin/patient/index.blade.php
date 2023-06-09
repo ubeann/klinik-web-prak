@@ -85,14 +85,14 @@
                         </td>
                         <td class="align-middle text-center text-sm">
                             <a href="{{ route('admin.patient.edit', $patient->id) }}" class="badge bg-warning md-18">
-                            <div class="text-white text-center d-flex align-items-center justify-content-center">
-                                <span class="material-icons md-18">edit</span>
-                            </div>
+                                <div class="text-white text-center d-flex align-items-center justify-content-center">
+                                    <span class="material-icons md-18">edit</span>
+                                </div>
                             </a>
                             <a href="{{ route('admin.patient.delete', $patient->id) }}" class="badge bg-danger" onclick="return confirm('Are you sure?')">
-                            <div class="text-white text-center d-flex align-items-center justify-content-center">
-                                <span class="material-icons md-18">delete</span>
-                            </div>
+                                <div class="text-white text-center d-flex align-items-center justify-content-center">
+                                    <span class="material-icons md-18">delete</span>
+                                </div>
                             </a>
                         </td>
                     </tr>

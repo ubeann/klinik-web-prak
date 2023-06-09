@@ -64,7 +64,7 @@ class RegistrationController extends Controller
         // Find registration
         $registration = Registration::findOrFail($id);
         if (!$registration) {
-            return redirect()->route('patient.dashboard.registration.index')->with('error', 'Pendaftaran tidak ditemukan');
+            return redirect()->back()->with('error', 'Pendaftaran tidak ditemukan');
         } else {
             // Update registration
             $registration->update([
@@ -72,7 +72,21 @@ class RegistrationController extends Controller
             ]);
 
             // Redirect to registration page
-            return redirect()->route('admin.registration.index')->with('success', 'Berhasil mengubah status jadwal temu');
+            return redirect()->back()->with('success', 'Berhasil mengubah status jadwal temu');
+        }
+    }
+
+    public function delete($id) {
+        // Find registration
+        $registration = Registration::findOrFail($id);
+        if (!$registration) {
+            return redirect()->route('patient.dashboard.registration.index')->with('error', 'Pendaftaran tidak ditemukan');
+        } else {
+            // Delete registration
+            $registration->delete();
+
+            // Redirect to registration page
+            return redirect()->back()->with('success', 'Berhasil menghapus jadwal temu');
         }
     }
 }

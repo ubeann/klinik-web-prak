@@ -31,16 +31,18 @@
         @include('admin.component.navbarAdmin', ['title' => 'Dashboard'])
         <!-- End Navbar -->
         <div class="container-fluid py-4">
-            @if (session('success'))
-            <div class="alert alert-success text-white mb-2">
-                <span>{{ session('success') }}</span>
+            <div class="row px-2 mb-4">
+                @if (session('success'))
+                <div class="alert alert-success text-white mb-2">
+                    <span>{{ session('success') }}</span>
+                </div>
+                @endif
+                @if (session('error'))
+                <div class="alert alert-danger text-white mb-2">
+                    <span>{{ session('error') }}</span>
+                </div>
+                @endif
             </div>
-            @endif
-            @if (session('error'))
-            <div class="alert alert-danger text-white mb-2">
-                <span>{{ session('error') }}</span>
-            </div>
-            @endif
             <div class="row">
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
                     <div class="card">
@@ -163,34 +165,27 @@
                                             </td>
                                             <td class="align-middle text-center text-sm">
                                                 @if ($registration->is_has_inspection)
-                                                <p class="text-xs text-secondary mb-0">Sudah diperiksa</p>
+                                                    <p class="text-xs text-secondary mb-0">Sudah diperiksa</p>
                                                 @else
-                                                <form
-                                                    action="{{ route('admin.registration.update', $registration->id) }}"
-                                                    method="POST">
-                                                    @csrf
-                                                    <button name="status" type="submit" class="badge bg-info md-18"
-                                                        value="pending">
-                                                        <div class="text-white text-center d-flex align-items-center justify-content-center"
-                                                            name="datang">
-                                                            <span class="material-icons md-18">hourglass_full</span>
-                                                        </div>
-                                                    </button>
-                                                    <button name="status" type="submit" class="badge bg-success md-18"
-                                                        value="accepted">
-                                                        <div class="text-white text-center d-flex align-items-center justify-content-center"
-                                                            name="selesai">
-                                                            <span class="material-icons md-18">check</span>
-                                                        </div>
-                                                    </button>
-                                                    <button name="status" type="submit" class="badge bg-danger md-18"
-                                                        value="declined">
-                                                        <div class="text-white text-center d-flex align-items-center justify-content-center"
-                                                            name="batal">
-                                                            <span class="material-icons md-18">close</span>
-                                                        </div>
-                                                    </button>
-                                                </form>
+                                                    @if($registration->status == 'pending')
+                                                        <form action="{{ route('admin.registration.update', $registration->id) }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin mengubah status?')">
+                                                            @csrf
+                                                            <button name="status" type="submit" class="btn btn-success btn-sm md-18 mx-1 align-middle" value="accepted">
+                                                                <span class="material-icons md-18">check</span>
+                                                            </button>
+                                                            <button name="status" type="submit" class="btn btn-danger btn-sm md-18 align-middle" value="declined">
+                                                                <span class="material-icons md-18">close</span>
+                                                            </button>
+                                                        </form>
+                                                    @else
+                                                        <form action="{{ route('admin.registration.delete', $registration->id) }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus data?')">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn-sm md-18 align-middle">
+                                                                <span class="material-icons md-18">delete</span> Hapus
+                                                            </button>
+                                                        </form>
+                                                    @endif
                                                 @endif
                                             </td>
                                         </tr>
