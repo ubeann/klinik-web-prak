@@ -13,14 +13,7 @@ class RegistrationController extends Controller
     public function index() {
         $title = 'List of Registrations';
         $nav = $this->nav;
-        $registrations = Registration::all()
-            ->sortBy(function ($registration) {
-                return $registration->patient->name;
-            })
-            ->sortBy(function ($registration) {
-                return $registration->doctor->name;
-            })
-            ->sortBy('arrival_date');
+        $registrations = Registration::latest()->get();
 
         // Return view
         return view('admin.registration', compact('title', 'nav', 'registrations'));
