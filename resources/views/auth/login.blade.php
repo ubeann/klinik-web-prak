@@ -36,12 +36,12 @@
                                     <h4 class="font-weight-bolder">Sign In {{ Str::ucfirst($type ?? 'Patient') }}</h4>
                                     <p class="mb-0">Enter your email and password to sign In</p>
                                     @if (session('success'))
-                                    <div class="alert alert-success mt-2 mb-0">
+                                    <div class="alert alert-success mt-2 mb-0 text-white">
                                         <span>{{ session('success') }}</span>
                                     </div>
                                     @endif
                                     @if (session('error'))
-                                    <div class="alert alert-danger mt-2 mb-0">
+                                    <div class="alert alert-danger mt-2 mb-0 text-white">
                                         <span>{{ session('error') }}</span>
                                     </div>
                                     @endif

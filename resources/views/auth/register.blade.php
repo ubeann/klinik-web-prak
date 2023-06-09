@@ -54,7 +54,7 @@
                           @enderror
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                        <input id="number_phone" type="text" class="form-control @error('number_phone') is-invalid @enderror text-white" placeholder="Nomor Telepon" name="number_phone" value="{{ old('number_phone') }}" required autocomplete="number_phone">
+                        <input id="number_phone" type="number" class="form-control @error('number_phone') is-invalid @enderror text-white" placeholder="Nomor Telepon" name="number_phone" value="{{ old('number_phone') }}" required autocomplete="number_phone">
                         @error('number_phone')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
