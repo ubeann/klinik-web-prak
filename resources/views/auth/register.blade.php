@@ -62,7 +62,7 @@
                         @enderror
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                        <input id="birth_date" type="date" class="form-control @error('birth_date') is-invalid @enderror text-white" placeholder="Tanggal Lahir" name="birth_date" value="{{ old('birth_date') }}" required autocomplete="birth_date">
+                        <input id="birth_date" type="text" class="form-control @error('birth_date') is-invalid @enderror text-white" placeholder="Tanggal Lahir" name="birth_date" value="{{ old('birth_date') }}" required autocomplete="birth_date" onfocus="(this.type='date')" onblur="(this.type='text')">
                         @error('birth_date')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
