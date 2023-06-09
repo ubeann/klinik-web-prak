@@ -90,7 +90,7 @@ class PatientController extends Controller
                 // Auth using Patient
                 if (Hash::check($request->input('password'), $patient->password)) {
                     auth('patient')->login($patient);
-                    return redirect()->route('landing');
+                    return redirect()->route('patient.dashboard.registration.index');
                 } else {
                     return redirect()->route('patient.login.form')->with('error', 'Password incorrect')->withInput($request->only('email'));
                 }
