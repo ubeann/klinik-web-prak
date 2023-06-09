@@ -38,9 +38,9 @@
                             yang tersebar di Surabaya. Dengan berbagai keunggulan demi memberikan kenyamanan selama
                             prosedur perawatan gigi dan mulut di DentCare.
                         </p>
-                        <button class="btn-booking">
-                            <a href="{{ route('patient.login.form') }}">Book Appointment</a>
-                        </button>
+                        <form action="{{ route('patient.dashboard.registration.index') }}" method="GET">
+                            <button class="btn-booking">Book Appointment</button>
+                        </form>
                     </div>
                     <figure class="hero-banner">
                         <img src="{{ asset('assets/img/landing/hero-banner.png') }}" width="587" height="839" alt="hero banner" class="w-100">
@@ -373,7 +373,7 @@
                     <div class="cta-content">
                         <p class="section-subtitle">Book Dentail Appointment</p>
                         <h2 class="h2 section-title">We Are Open and Welcoming Patiens</h2>
-                        <a href="{{ route('patient.login.form') }}" class="btn">Book Appointment</a>
+                        <a href="{{ route('patient.dashboard.registration.index') }}" class="btn">Book Appointment</a>
                     </div>
                 </div>
             </section>
