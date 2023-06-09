@@ -29,7 +29,7 @@ class Registration extends Model
     }
 
     public function getCreatedAtAttribute($value) {
-        return date('d M Y - H:i:s', strtotime($value));
+        return date('d M Y', strtotime($value));
     }
 
     public function getArrivalDateAttribute($value) {
