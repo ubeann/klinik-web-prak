@@ -36,7 +36,7 @@ class UserController extends Controller
         $nav = "dashboard";
         $patient = Patient::all()->count();
         $doctor = Doctor::all()->count();
-        $registration = Registration::all()->count();
+        $registration = Registration::where('status', 'accepted')->count();
         $registrations = Registration::latest()->take(5)->get();
         return view('admin.dashboard', compact('nav', 'title', 'patient', 'doctor', 'registration', 'registrations'));
     }
