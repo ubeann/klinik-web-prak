@@ -107,11 +107,14 @@
                                 </td>
                                 <td class="align-middle text-center text-sm">
                                     @if ($registration->status == 'pending')
-                                        <p class="text-xs text-white mb-0">{{ Str::ucfirst($registration->status) }}</p>
+                                    <p class="text-xs text-white badge bg-warning mb-0">{{
+                                        Str::ucfirst($registration->status) }}</p>
                                     @elseif ($registration->status == 'accepted')
-                                        <p class="text-xs text-success mb-0">{{ Str::ucfirst($registration->status) }}</p>
+                                    <p class="text-xs text-white badge bg-success mb-0">{{
+                                        Str::ucfirst($registration->status) }}</p>
                                     @elseif ($registration->status == 'declined')
-                                        <p class="text-xs text-danger mb-0">{{ Str::ucfirst($registration->status) }}</p>
+                                    <p class="text-xs text-white badge bg-danger mb-0">{{
+                                        Str::ucfirst($registration->status) }}</p>
                                     @endif
                                 </td>
                             </tr>
