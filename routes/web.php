@@ -95,6 +95,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
         Route::group(['as' => 'registration.', 'prefix' => 'registration'], function () {
             Route::get('/', [RegistrationController::class, 'index'])->name('index');
             Route::post('update/{id}', [RegistrationController::class, 'update'])->name('update');
+            Route::delete('delete/{id}', [RegistrationController::class, 'delete'])->name('delete');
         });
 
         // Inspection
