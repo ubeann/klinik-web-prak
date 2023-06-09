@@ -26,6 +26,7 @@ class CreateRegistrationsTable extends Migration
                 ->references('id')
                 ->on('doctors');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
